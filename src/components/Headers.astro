@@ -1,0 +1,19 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+	title = 'Joshua Santos: Personal Site',
+	description = 'The personal site of Joshua Santos, a full-stack engineer',
+} = Astro.props as Props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

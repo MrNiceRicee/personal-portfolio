@@ -1,0 +1,85 @@
+---
+import DarkModeButton from "./DarkModeButton";
+---
+
+<nav id="nav-bar" class="nav-bar dark:bg-zinc-800">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a
+        href="#home"
+        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+      >
+        Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        href="#about"
+        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+      >
+        About</a
+      >
+    </li>
+    <li class="nav-item ml-auto">
+      <a
+        href="#contact"
+        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+        >Contact</a
+      >
+    </li><li class="nav-item">
+      <DarkModeButton client:only="react" />
+    </li>
+  </ul>
+</nav>
+<style>
+  .nav-bar {
+    @apply py-7 px-10 text-lg font-light bg-white sticky top-0 z-10 transition-all duration-300;
+  }
+  .nav-list {
+    @apply flex justify-between items-center;
+  }
+  .nav-item {
+    @apply mr-6;
+  }
+  .nav-item:last-child {
+    @apply mr-0;
+  }
+  .nav-link {
+    @apply outline-none border-none relative;
+  }
+  .nav-link::before {
+    @apply absolute w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 
+    left-0 bottom-[-4px];
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    /* bezier curve with bounce */
+    transition: transform 0.3s cubic-bezier(0.5, -0.55, 0.4, 1.7);
+  }
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+  .nav-link:focus::before {
+    transform: scaleX(1);
+  }
+  .nav-link:active::before {
+    transform: scaleX(1);
+  }
+  .nav-bar-scroll {
+    @apply drop-shadow-lg border-b border-b-zinc-200;
+    backdrop-filter: blur(14px);
+  }
+</style>
+
+<script>
+  const navBar = document.querySelector("#nav-bar")!;
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      navBar.classList.add("nav-bar-scroll");
+    } else {
+      navBar.classList.remove("nav-bar-scroll");
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+</script>

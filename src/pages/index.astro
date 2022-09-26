@@ -1,0 +1,39 @@
+---
+import Nav from "../components/Nav.astro";
+import Headers from "../components/Headers.astro";
+import HeroHeader from "../components/HeroHeader.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <Headers />
+  </head>
+  <body
+    class="max-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 transition-colors"
+  >
+    <Nav />
+		<HeroHeader />
+    <script is:inline>
+      const theme = () => {
+        // check for dark mode preference
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        // check for dark mode in localStorage
+        const isDark = localStorage.getItem("darkMode") === "true";
+        // check for light mode in localStorage
+        const isLight = localStorage.getItem("darkMode") === "false";
+
+        // if dark mode is preferred, or dark mode is set in localStorage
+        if (!isLight && (prefersDark || isDark)) {
+          // set the dark class on the body
+          return document.documentElement.classList.add("dark");
+        }
+        // remove the dark class from the body
+        document.documentElement.classList.remove("dark");
+      };
+      theme();
+    </script>
+  </body>
+</html>
