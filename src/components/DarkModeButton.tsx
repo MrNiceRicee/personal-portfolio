@@ -36,6 +36,7 @@ const DarkModeButton = () => {
         data-state-checked:bg-zinc-700
         group
       `)}
+      aria-label="Dark mode toggle"
       onCheckedChange={setDarkMode}
       checked={isDark}
     >

@@ -2,12 +2,12 @@
 import DarkModeButton from "./DarkModeButton";
 ---
 
-<nav id="nav-bar" class="nav-bar dark:bg-zinc-800">
+<nav id="nav-bar" class="nav-bar dark:bg-zinc-900/95">
   <ul class="nav-list">
     <li class="nav-item">
       <a
         href="#home"
-        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+        class="nav-link hover:text-blue-500 focus:text-blue-500 active:text-blue-500 dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
       >
         Home</a
       >
@@ -15,7 +15,7 @@ import DarkModeButton from "./DarkModeButton";
     <li class="nav-item">
       <a
         href="#about"
-        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+        class="nav-link hover:text-blue-500 focus:text-blue-500 active:text-blue-500 dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
       >
         About</a
       >
@@ -23,7 +23,7 @@ import DarkModeButton from "./DarkModeButton";
     <li class="nav-item ml-auto">
       <a
         href="#contact"
-        class="nav-link dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
+        class="nav-link hover:text-blue-500 focus:text-blue-500 active:text-blue-500 dark:text-gray-300 dark:hover:text-blue-300 dark:focus:text-blue-300"
         >Contact</a
       >
     </li><li class="nav-item">
@@ -33,7 +33,7 @@ import DarkModeButton from "./DarkModeButton";
 </nav>
 <style>
   .nav-bar {
-    @apply py-7 px-10 text-lg font-light bg-white sticky top-0 z-10 transition-all duration-300;
+    @apply py-7 px-10 text-lg font-light bg-zinc-100/90 sticky top-0 z-10 transition-all duration-300 backdrop-blur-md;
   }
   .nav-list {
     @apply flex justify-between items-center;
@@ -48,27 +48,29 @@ import DarkModeButton from "./DarkModeButton";
     @apply outline-none border-none relative;
   }
   .nav-link::before {
-    @apply absolute w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 
+    @apply absolute w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600
     left-0 bottom-[-4px];
     content: "";
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: bottom;
     /* bezier curve with bounce */
     transition: transform 0.3s cubic-bezier(0.5, -0.55, 0.4, 1.7);
   }
   .nav-link:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(1); 
+    transform-origin: right;
   }
   .nav-link:focus::before {
     transform: scaleX(1);
+    transform-origin: left;
   }
   .nav-link:active::before {
     transform: scaleX(1);
   }
-  .nav-bar-scroll {
+  /* .nav-bar-scroll {
     @apply drop-shadow-lg border-b border-b-zinc-200;
     backdrop-filter: blur(14px);
-  }
+  } */
 </style>
 
 <script>

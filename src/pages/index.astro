@@ -1,7 +1,7 @@
 ---
-import Nav from "../components/Nav.astro";
-import Headers from "../components/Headers.astro";
-import HeroHeader from "../components/HeroHeader.astro";
+import Nav from '../components/Nav.astro';
+import Headers from '../components/Headers.astro';
+import HeroHeader from '../components/HeroHeader.astro';
 ---
 
 <!DOCTYPE html>
@@ -13,25 +13,45 @@ import HeroHeader from "../components/HeroHeader.astro";
     class="max-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 transition-colors"
   >
     <Nav />
-		<HeroHeader />
+    <HeroHeader />
+    <div class="min-h-screen relative">
+      <!-- pill design -->
+      <div class="absolute left-1/2  rounded-full w-36 h-10 transform -translate-x-1/2 -translate-y-1/2
+      bg-indigo-500 dark:bg-indigo-400
+      flex items-center justify-center p-2
+      text-white dark:text-zinc-900
+      before:content-['']
+      before:absolute before:top-0 before:left-0
+      before:w-full before:h-full
+      before:rounded-full
+      before:bg-gradient-to-tr
+      before:from-indigo-600 before:to-indigo-300
+      before:transition-opacity before:duration-500 before:ease-in-out
+      before:z-[-1] before:opacity-0
+      before:animate-fadeIn
+      ">
+      some stuff i do
+      </div>
+      
+    </div>
     <script is:inline>
       const theme = () => {
         // check for dark mode preference
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          '(prefers-color-scheme: dark)'
         ).matches;
         // check for dark mode in localStorage
-        const isDark = localStorage.getItem("darkMode") === "true";
+        const isDark = localStorage.getItem('darkMode') === 'true';
         // check for light mode in localStorage
-        const isLight = localStorage.getItem("darkMode") === "false";
+        const isLight = localStorage.getItem('darkMode') === 'false';
 
         // if dark mode is preferred, or dark mode is set in localStorage
         if (!isLight && (prefersDark || isDark)) {
           // set the dark class on the body
-          return document.documentElement.classList.add("dark");
+          return document.documentElement.classList.add('dark');
         }
         // remove the dark class from the body
-        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove('dark');
       };
       theme();
     </script>
