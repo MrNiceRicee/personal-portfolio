@@ -37,16 +37,22 @@ module.exports = {
           '0%': { transform: 'scale(0.75)' },
           '100%': { transform: 'scale(1)' },
         },
+        growMore: {
+          '0%': { transform: 'scale(1.25)' },
+          '100%': { transform: 'scale(1)' },
+        }
       },
     },
     animation: {
       fadeIn: 'fadeIn 0.5s ease-in-out',
       grow: 'grow 0.5s ease-in-out',
       grow25: 'grow25 0.5s ease-in-out',
+      'infinite-fade-in': 'fadeIn 2.5s ease-in-out infinite alternate',
       'infinite-grow': 'grow 0.5s ease-in-out infinite',
       'infinite-grow25': 'grow25 5s ease-in-out infinite alternate',
       'infinite-grow50': 'grow50 5s ease-in-out infinite alternate',
       'infinite-grow75': 'grow75 5s ease-in-out infinite alternate',
+      'infinite-growMore': 'growMore 5s ease-in-out infinite alternate',
     },
   },
   plugins: [

@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Headers from '../components/Headers.astro';
 import HeroHeader from '../components/HeroHeader.astro';
+import IndexWhatIDo from '../components/IndexWhatIDo.astro';
 ---
 
 <!DOCTYPE html>
@@ -14,26 +15,8 @@ import HeroHeader from '../components/HeroHeader.astro';
   >
     <Nav />
     <HeroHeader />
-    <div class="min-h-screen relative">
-      <!-- pill design -->
-      <div class="absolute left-1/2  rounded-full w-36 h-10 transform -translate-x-1/2 -translate-y-1/2
-      bg-indigo-500 dark:bg-indigo-400
-      flex items-center justify-center p-2
-      text-white dark:text-zinc-900
-      before:content-['']
-      before:absolute before:top-0 before:left-0
-      before:w-full before:h-full
-      before:rounded-full
-      before:bg-gradient-to-tr
-      before:from-indigo-600 before:to-indigo-300
-      before:transition-opacity before:duration-500 before:ease-in-out
-      before:z-[-1] before:opacity-0
-      before:animate-fadeIn
-      ">
-      some stuff i do
-      </div>
-      
-    </div>
+    <IndexWhatIDo />
+
     <script is:inline>
       const theme = () => {
         // check for dark mode preference
