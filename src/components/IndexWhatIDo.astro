@@ -1,24 +1,20 @@
+---
+import Pill from './Pill.astro';
+---
+
 <div
-  class="min-h-screen relative bg-zinc-100 dark:bg-zinc-900 text-white dark:text-zinc-900"
+  class="h-[calc(100vh-10rem)] relative bg-zinc-100 dark:bg-zinc-900"
 >
   <!-- pill design -->
   <div
-    class="background-pattern background-pattern-light dark:hidden bg-zinc-300 pointer-events-none"
+    class="background-pattern background-pattern-light dark:hidden bg-zinc-200 pointer-events-none"
   >
   </div>
   <div
     class="background-pattern background-pattern-dark hidden dark:block bg-zinc-800 pointer-events-none"
   >
   </div>
-  <div
-    class="absolute left-1/2 p-2 backdrop-blur-md rounded-full transform -translate-x-1/2 -translate-y-1/2"
-  >
-    <div
-      class="w-36 h-10 flex items-center justify-center bg-indigo-500 dark:bg-indigo-400 rounded-full before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-36 before:h-10 before:rounded-full before:bg-gradient-to-tr before:from-indigo-600 before:to-indigo-300 before:transition-opacity before:duration-500 before:ease-in-out before:z-[1] before:opacity-0 before:animate-infinite-fade-in"
-    >
-      <span class="text-sm font-bold z-10">what i do</span>
-    </div>
-  </div>
+  <Pill title="what i do" />
 </div>
 
 <style>

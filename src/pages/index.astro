@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Headers from '../components/Headers.astro';
 import HeroHeader from '../components/HeroHeader.astro';
 import IndexWhatIDo from '../components/IndexWhatIDo.astro';
+import IndexWhoAmI from '../components/IndexWhoAmI.astro';
 ---
 
 <!DOCTYPE html>
@@ -11,10 +12,11 @@ import IndexWhatIDo from '../components/IndexWhatIDo.astro';
     <Headers />
   </head>
   <body
-    class="max-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 transition-colors"
+    class="h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 transition-colors"
   >
     <Nav />
     <HeroHeader />
+    <IndexWhoAmI />
     <IndexWhatIDo />
 
     <script is:inline>
