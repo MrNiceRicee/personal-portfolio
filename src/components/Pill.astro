@@ -3,7 +3,7 @@ const { title } = Astro.props as { title: string };
 ---
 
 <div
-  class="absolute left-1/2 p-2 backdrop-blur-md rounded-full transform -translate-x-1/2 -translate-y-1/2"
+  class="absolute left-1/2 top-0 p-2 backdrop-blur-sm rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"
 >
   <div
     class="w-36 h-10 flex items-center justify-center bg-indigo-500 dark:bg-indigo-400 rounded-full before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-36 before:h-10 before:rounded-full before:bg-gradient-to-tr before:from-indigo-600 before:to-indigo-300 before:transition-opacity before:duration-500 before:ease-in-out before:z-[1] before:opacity-0 before:animate-infinite-fade-in"

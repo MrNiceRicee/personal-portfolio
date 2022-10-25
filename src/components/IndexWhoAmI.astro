@@ -2,6 +2,52 @@
 import Pill from './Pill.astro';
 ---
 
-<div class="h-[calc(100vh-10rem)] w-full">
+<div
+  class="h-[calc(100vh-10rem)] w-full bg-zinc-900 relative flex items-center justify-center"
+  id="who-am-i-block"
+>
   <Pill title="who am i" />
+  <div
+    class="flex items-center justify-center bg-yellow-50"
+    id="who-am-i-content"
+  >
+    hey!
+  </div>
+  <div aria-hidden="true">
+    <div class="basic-bg"></div>
+  </div>
 </div>
+
+<style>
+  .basic-bg {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    /* repeating background*/
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.1) 9%,
+      transparent 9%
+    );
+    background-position: 0 0;
+    background-size: 6vmin 6vmin;
+    background-position: center;
+
+    mask: linear-gradient(
+        to bottom,
+        transparent 10%,
+        black 50%,
+        transparent 90%
+      ),
+      radial-gradient(circle at 50% 50%, black 0%, transparent 80%);
+
+    transform: rotateX(30deg), rotateY(30deg), rotateZ(30deg);
+    position: absolute;
+    inset: 0;
+    transition: background-size 0.5s ease;
+    pointer-events: none;
+  }
+  #who-am-i-content:hover ~ div >.basic-bg {
+    background-size: 4vmin 4vmin;
+  }
+</style>
