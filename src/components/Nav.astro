@@ -6,10 +6,10 @@ import DarkModeButton from './DarkModeButton';
   id="nav-bar"
   class="sticky top-0 z-10 text-lg font-light transition-all duration-300"
 >
-  <div class="backdrop-blur-[10px] px-10 w-full h-full flex justify-center items-center">
-    <ul
-      class="nav-list border-b-[1px] border-b-zinc-300 dark:border-b-zinc-700 py-2 w-full max-w-5xl"
-    >
+  <div
+    class="backdrop-blur-[10px] px-10 w-full h-full flex justify-center items-center"
+  >
+    <ul class="nav-list relative py-2 w-full max-w-5xl">
       <li class="nav-item">
         <a
           href="#home"
@@ -35,6 +35,10 @@ import DarkModeButton from './DarkModeButton';
       </li><li class="nav-item">
         <DarkModeButton client:only="react" />
       </li>
+      <div
+        class="nav-border absolute w-full h-[1px] bottom-0 from-zinc-500 via-transparent to-zinc-500"
+      >
+      </div>
     </ul>
   </div>
   <div
@@ -78,5 +82,12 @@ import DarkModeButton from './DarkModeButton';
   }
   .nav-link:active::before {
     transform: scaleX(1);
+  }
+  .nav-border {
+    /* radial gradient */
+    background: radial-gradient(
+      circle at 50% 50%,
+      var(--tw-gradient-stops)
+    );
   }
 </style>

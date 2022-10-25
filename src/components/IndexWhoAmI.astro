@@ -7,14 +7,11 @@ import Pill from './Pill.astro';
   id="who-am-i-block"
 >
   <Pill title="who am i" />
-  <div
-    class="flex items-center justify-center z-[1]"
-    id="who-am-i-content"
-  >
+  <div class="flex items-center justify-center z-[1]" id="who-am-i-content">
     hey!
   </div>
   <div aria-hidden="true">
-    <div class="basic-bg from-zinc-300 dark:from-zinc-800"></div>
+    <div class="basic-bg from-zinc-400 dark:from-zinc-800"></div>
   </div>
 </div>
 
@@ -44,10 +41,11 @@ import Pill from './Pill.astro';
     transform: rotateX(30deg), rotateY(30deg), rotateZ(30deg);
     position: absolute;
     inset: 0;
-    transition: background-size 0.5s ease;
+    transition: background-size 2s ease-out;
     pointer-events: none;
   }
-  #who-am-i-content:hover ~ div >.basic-bg {
+  #who-am-i-content:hover ~ div > .basic-bg {
     background-size: 2vmin 2vmin;
+    transition: background-size 0.5s ease;
   }
 </style>
