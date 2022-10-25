@@ -3,15 +3,15 @@ import Pill from './Pill.astro';
 ---
 
 <div
-  class="h-[calc(100vh-10rem)] relative bg-zinc-100 dark:bg-zinc-900"
+  class="h-[calc(100vh-10rem)] relative bg-zinc-100 dark:bg-zinc-900 transition-colors duration-500"
 >
   <!-- pill design -->
   <div
-    class="background-pattern background-pattern-light dark:hidden bg-zinc-200 pointer-events-none"
+    class="background-pattern background-pattern-light dark:hidden pointer-events-none"
   >
   </div>
   <div
-    class="background-pattern background-pattern-dark hidden dark:block bg-zinc-800 pointer-events-none"
+    class="background-pattern background-pattern-dark hidden dark:block bg-zinc-900 pointer-events-none"
   >
   </div>
   <Pill title="what i do" />

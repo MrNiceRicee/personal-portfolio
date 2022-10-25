@@ -1,19 +1,18 @@
-<header class="snap-center hero bg-tranparent transition-colors duration-500">
-  <div class="w-full h-full relative overflow-hidden">
+<header class="hero ">
+  <div class="w-full h-full relative overflow-hidden transition-colors duration-500 dark:bg-zinc-900 bg-zinc-100">
     <div
       class="hero-radial-mask from-zinc-300 via-zinc-300 to-zinc-100
       dark:from-zinc-700 dark:to-zinc-900
       dark:mix-blend-lighten
       bg-gradient-to-b
       mix-blend-darken
-      stop
       min-w-[800px] w-full h-[200%] bottom-[0%] left-[0%] origin-center"
     >
     </div>
     <div class="hero-image hidden dark:block bg-repeat"></div>
     <div class="hero-image-light dark:hidden"></div>
   </div>
-  <div class="hero-inner-container snap-always">
+  <div class="hero-inner-container">
     <div class="hero-inner" aria-details="header">
       <h1 class="text-7xl font-black ">joshua santos</h1>
       <p class="text-5xl font-extralight tracking-[.2em]">software engineer</p>
@@ -34,15 +33,6 @@
       circle,
       var(--tw-gradient-from) 0%,
       var(--tw-gradient-to) 60%
-    ); */
-  }
-  .hero-linear-mask {
-    position: absolute;
-    background-color: transparent;
-    /* background-image: linear-gradient(
-      to bottom,
-      var(--tw-gradient-from) 0%,
-      var(--tw-gradient-to) 50%
     ); */
   }
   .hero-image {
