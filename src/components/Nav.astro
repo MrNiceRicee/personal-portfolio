@@ -36,7 +36,7 @@ import DarkModeButton from './DarkModeButton';
         <DarkModeButton client:only="react" />
       </li>
       <div
-        class="nav-border absolute w-full h-[1px] bottom-0 from-zinc-500 via-transparent to-zinc-500"
+        class="nav-border absolute w-full h-[1px] bottom-0 from-zinc-700 dark:from-slate-200 to-transparent"
       >
       </div>
     </ul>
@@ -85,9 +85,11 @@ import DarkModeButton from './DarkModeButton';
   }
   .nav-border {
     /* radial gradient */
-    background: radial-gradient(
-      circle at 50% 50%,
-      var(--tw-gradient-stops)
+    background: linear-gradient(
+      90deg,
+      var(--tw-gradient-to),
+      var(--tw-gradient-from),
+      var(--tw-gradient-to)
     );
   }
 </style>
