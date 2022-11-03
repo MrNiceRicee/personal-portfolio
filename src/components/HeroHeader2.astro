@@ -1,12 +1,14 @@
-<header class="h-[calc(80vh-96px)] w-full relative">
-  <div class="absolute inset-0 w-full h-full" id="repeat">
+<header
+  class="h-[calc(80vh-96px)] w-full relative bg-zinc-100 dark:bg-zinc-900 transition-colors duration-500"
+>
+  <div class="absolute inset-0 w-full h-full" id="repeat-text">
     {
       Array(20)
         .fill('')
         .map((_, index) => {
           return (
             <div
-              class="flex justify-around text-[calc(8vw)] font-black leading-[calc(7.1vw)] text-zinc-200 dark:text-zinc-800"
+              class="flex justify-around text-[calc(8vw)] font-black leading-[calc(7.1vw)] text-zinc-200 transition-colors duration-300 dark:text-zinc-800"
               aria-hidden={Boolean(index)}
             >
               <h1 class="capitalize tracking-wide">SOFTWARE</h1>
@@ -17,24 +19,34 @@
     }
   </div>
   <div class="absolute inset-0 w-full h-full flex items-center justify-center">
-    <div class="card relative text-center p-2 rounded-lg backdrop-blur-sm
-    border dark:border-zinc-50 border-zinc-400 before:from-violet-500 before:to-yellow-500 before:rounded-lg
-    ">
-      <div class="card-content w-full h-full rounded-md p-2 from-zinc-300 dark:from-zinc-700">
-        <h1>Joshua Santos</h1>
+    <div
+      class="card relative text-center rounded-lg backdrop-blur-sm border dark:border-zinc-50 border-zinc-400 before:from-emerald-400/80 before:to-fuchsia-400/80 dark:before:from-emerald-600/80 dark:before:to-fuchsia-600/80 before:rounded-lg duration-75"
+    >
+      <div
+        class="card-content w-full h-full rounded-md p-10 py-[50%] from-zinc-300 dark:from-zinc-700 text-left"
+      >
+        <h2 class="text-4xl font-black">Joshua Santos</h2>
+        <p>hello?</p>
       </div>
     </div>
   </div>
 </header>
 
 <style>
+  #repeat-text {
+    mask: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 20% 80%,
+      transparent 100%
+    );
+  }
   .card {
     aspect-ratio: 9/16;
-    /* border: 1px solid; */
-    width: 35vmin;
+    width: clamp(300px, 35vh, 400px);
   }
   .card:before {
-    content: "";
+    content: '';
     height: 100%;
     width: 100%;
     inset: 0;
@@ -44,27 +56,25 @@
       130deg,
       transparent 0% 33%,
       var(--tw-gradient-from) 66%,
-      rgb(217,70,239) 83.5%,
+      rgb(14 165 233 / 0.8) 83.5%,
       var(--tw-gradient-to) 100%
     );
     background-size: 300% 300%;
     background-position: 0% 0%;
+    background-blend-mode: screen;
     transition: background-position 250ms ease-in-out, transform 500ms ease-out;
   }
   .card:hover:before {
     background-position: 100% 100%;
-    transforom: scale(1.08, 1.1)
+    transforom: scale(1.08, 1.1);
   }
   .card-content {
-    background: radial-gradient(
-    var(--tw-gradient-from) 8%,
-      transparent 8%
-    );
+    background: radial-gradient(var(--tw-gradient-from) 8%, transparent 8%);
     background-position: 0% 0%;
     background-size: 4vmin 4vmin;
     transition: background-position 250ms ease-out;
   }
   .card:hover > .card-content {
-    background-position: -12.5% 10%;
+    background-position: -9% 9%;
   }
 </style>
