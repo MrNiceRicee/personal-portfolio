@@ -1,18 +1,14 @@
----
-import Pill from './Pill.astro';
----
-
 <div
   class="h-[calc(100vh-10rem)] w-full relative flex items-center justify-center duration-500 dark:bg-zinc-900 bg-zinc-100 transition-colors"
   id="who-am-i-block"
 >
-  <Pill title="who am i" />
-  <div class="sticky flex items-center justify-center z-[1]" id="who-am-i-content">
+  <div
+    class="sticky flex items-center justify-center z-[1]"
+    id="who-am-i-content"
+  >
     hey!
   </div>
-  <div aria-hidden="true">
-    <div class="basic-bg from-zinc-400 dark:from-zinc-800"></div>
-  </div>
+
 </div>
 
 <style>
